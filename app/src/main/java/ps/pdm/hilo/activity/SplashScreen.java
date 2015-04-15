@@ -1,41 +1,48 @@
 package ps.pdm.hilo.activity;
 
-import android.app.ListActivity;
+import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import ps.pdm.hilo.R;
-import ps.pdm.hilo.adapter.ClienteAdapter;
-import ps.pdm.hilo.adapter.EntradaAdapter;
 import ps.pdm.hilo.controller.ClienteController;
+import ps.pdm.hilo.controller.ComputadorController;
 import ps.pdm.hilo.controller.EntradaController;
-import ps.pdm.hilo.model.Cliente;
+import ps.pdm.hilo.model.Computador;
 
-public class ListarEntradas extends ListActivity {
+public class SplashScreen extends ActionBarActivity {
 
-    private ClienteAdapter adapter;
-    private EntradaAdapter entradaAdapter;
+    private static int TIME_DELAY = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listar_entradas);
+        setContentView(R.layout.activity_splash_screen);
 
-        //adapter = new ClienteAdapter(this, R.layout.cliente_list_item, ClienteController.obterTodos());
-        //setListAdapter(adapter);
-        entradaAdapter = new EntradaAdapter(this, R.layout.entrada_list_item, EntradaController.obterTodos());
-        setListAdapter(entradaAdapter);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                ClienteController.init();
+                ComputadorController.init();
+                EntradaController.init();
+
+                Intent intent = new Intent(SplashScreen.this, Principal.class);
+                startActivity(intent);
+
+                finish();
+            }
+        }, TIME_DELAY);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_listar_entradas, menu);
+        getMenuInflater().inflate(R.menu.menu_splash_screen, menu);
         return true;
     }
 
@@ -52,14 +59,5 @@ public class ListarEntradas extends ListActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        super.onListItemClick(l, v, position, id);
-
-        int itemPosition = position;
-
-        String item = (String) l.getItemAtPosition(position);
     }
 }

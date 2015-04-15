@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="prompt_marcas">Escolha a marca</string>
+    
+    <string-array name="marcas">
+
+        <item>Acer</item>
+        <item>Apple</item>
+        <item>Asus</item>
+        <item>Avell</item>
+        <item>Dell</item>
+        <item>HP</item>
+        <item>Lenovo</item>
+        <item>LG</item>
+        <item>Samsung</item>
+        <item>Sony</item>
+
+    </string-array>
+
+</resources>

@@ -57,4 +57,8 @@ public class Cliente implements Serializable {
     public String getBairro() {
         return bairro;
     }
+
+    public String toString() {
+        return this.nome;
+    }
 }

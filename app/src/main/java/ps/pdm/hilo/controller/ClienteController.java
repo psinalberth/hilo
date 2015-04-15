@@ -35,8 +35,8 @@ public class ClienteController {
         clientes.add(modelo);
     }
 
-    public static Cliente obter() {
-        return null;
+    public static Cliente obter(int id) {
+        return clientes.get(id);
     }
 
     public static void alterar(Cliente modelo) {

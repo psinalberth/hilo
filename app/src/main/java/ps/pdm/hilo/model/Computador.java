@@ -53,4 +53,8 @@ public class Computador {
     public String getEstado() {
         return estado;
     }
+
+    public String toString() {
+        return this.descricao + " " + marca;
+    }
 }

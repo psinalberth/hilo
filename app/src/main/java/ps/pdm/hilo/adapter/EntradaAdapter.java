@@ -21,8 +21,9 @@ public class EntradaAdapter extends ArrayAdapter<Entrada> {
 
     private List<Entrada> entradas;
 
-    public EntradaAdapter(Context context, int resource, int textViewResourceId, Entrada[] objects) {
-        super(context, resource, textViewResourceId, objects);
+    public EntradaAdapter(Context context, int resource, List<Entrada> objects) {
+        super(context, resource, objects);
+        this.entradas = objects;
     }
 
     @Override
@@ -57,13 +58,13 @@ public class EntradaAdapter extends ArrayAdapter<Entrada> {
                 lbCliente.setText("Cliente: ");
 
             if (txtListCliente != null)
-                txtListCliente.setText(entrada.getCliente());
+                txtListCliente.setText(entrada.getCliente().getNome());
 
             if (lbComputador != null)
                 lbComputador.setText("Computador: ");
 
             if (txtListComputador != null)
-                txtListComputador.setText(entrada.getComputador());
+                txtListComputador.setText(entrada.getComputador().toString());
 
             if (lbDescricaoProblema != null)
                 lbDescricaoProblema.setText("Problema: ");
@@ -76,7 +77,7 @@ public class EntradaAdapter extends ArrayAdapter<Entrada> {
 
             if (txtLimparComputador != null) {
 
-                if (entrada.isLimparComputador() == true)
+                if (entrada.isLimparComputador())
                     txtLimparComputador.setText("Sim");
                 else
                     txtLimparComputador.setText("Não");
@@ -87,7 +88,7 @@ public class EntradaAdapter extends ArrayAdapter<Entrada> {
 
             if (txtEntregaDomicilio != null) {
 
-                if (entrada.isEntregaDomicilio() == true)
+                if (entrada.isEntregaDomicilio())
                     txtEntregaDomicilio.setText("Sim");
                 else
                     txtEntregaDomicilio.setText("Não");
@@ -96,10 +97,13 @@ public class EntradaAdapter extends ArrayAdapter<Entrada> {
             if (lbEmbalarEntrega != null)
                 lbEmbalarEntrega.setText("Embalar para Entrega: ");
 
-            if (entrada.isEmbalarComputador() == true)
-                txtEmbalarEntrega.setText("Sim");
-            else
-                txtEmbalarEntrega.setText("Não");
+            if (txtEmbalarEntrega != null) {
+
+                if (entrada.isEmbalarComputador())
+                    txtEmbalarEntrega.setText("Sim");
+                else
+                    txtEmbalarEntrega.setText("Não");
+            }
         }
 
         return view;

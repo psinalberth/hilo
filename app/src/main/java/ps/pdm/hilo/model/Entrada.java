@@ -8,8 +8,8 @@ import java.util.Date;
 public class Entrada {
 
     private int id;
-    private String cliente;
-    private String computador;
+    private Cliente cliente;
+    private Computador computador;
     private String descricaoProblema;
     private boolean limparComputador;
     private boolean entregaDomicilio;
@@ -20,7 +20,7 @@ public class Entrada {
     }
 
     public Entrada(int id, Cliente cliente, Computador computador, String descricaoProblema,
-                   Date dataEntrada, Date dataSaida, boolean limparComputador, boolean entregaDomicilio,
+                   boolean limparComputador, boolean entregaDomicilio,
                    boolean embalarComputador) {
 
     }
@@ -33,19 +33,19 @@ public class Entrada {
         return id;
     }
 
-    public void setCliente(String cliente) {
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
-    public String getCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
 
-    public void setComputador(String computador) {
+    public void setComputador(Computador computador) {
         this.computador = computador;
     }
 
-    public String getComputador() {
+    public Computador getComputador() {
         return computador;
     }
 

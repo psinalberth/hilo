@@ -66,16 +66,7 @@ public class NovoCliente extends ActionBarActivity implements View.OnClickListen
 
         Cliente cliente = new Cliente(ClienteController.getQuantidade()+1, nome, endereco, bairro);
 
-
-        /*Intent intent = new Intent(this, ListarEntradas.class);
-        intent.putExtra("cliente", cliente);
-        startActivity(intent);*/
-
         ClienteController.adicionar(cliente);
-
-        for (Cliente c : ClienteController.obterTodos()) {
-            Log.i("INFO", c.getNome());
-        }
 
         finish();
     }

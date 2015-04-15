@@ -4,16 +4,25 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import ps.pdm.hilo.R;
+import ps.pdm.hilo.controller.ClienteController;
+import ps.pdm.hilo.controller.ComputadorController;
+import ps.pdm.hilo.model.Cliente;
 
-public class NovaEntrada extends ActionBarActivity {
+public class NovaEntrada extends ActionBarActivity implements View.OnClickListener {
 
     private EditText txtProblema, txtDataEntrada, txtDataSaida, txtCliente, txtComputador;
+    private Spinner cbCliente, cbComputador;
     private CheckBox checkEntrega, checkLimpeza, checkEmbalagem;
     private Button btIncluir, btLimpar;
 
@@ -23,8 +32,8 @@ public class NovaEntrada extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nova_entrada);
 
-        txtCliente = (EditText) findViewById(R.id.txtCliente);
-        txtComputador = (EditText) findViewById(R.id.txtEquipamento);
+        cbCliente = (Spinner) findViewById(R.id.cbCliente);
+        cbComputador = (Spinner) findViewById(R.id.cbComputador);
 
         txtProblema = (EditText) findViewById(R.id.txtProblema);
         txtDataEntrada = (EditText) findViewById(R.id.txtDataEntrada);
@@ -36,6 +45,15 @@ public class NovaEntrada extends ActionBarActivity {
 
         btIncluir = (Button) findViewById(R.id.btIncluir);
         btLimpar = (Button) findViewById(R.id.btLimpar);
+
+        btIncluir.setOnClickListener(this);
+        btLimpar.setOnClickListener(this);
+
+        ArrayAdapter clienteAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, ClienteController.obterTodos());
+        cbCliente.setAdapter(clienteAdapter);
+
+        ArrayAdapter computadorAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, ComputadorController.obterTodos());
+        cbComputador.setAdapter(computadorAdapter);
     }
 
 
@@ -59,5 +77,25 @@ public class NovaEntrada extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void teste() {
+
+        if (checkEntrega.isChecked())
+            Toast.makeText(this, checkEntrega.getText().toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+
+            case R.id.btIncluir:
+                teste();
+                break;
+
+            case R.id.btLimpar:
+                break;
+        }
     }
 }

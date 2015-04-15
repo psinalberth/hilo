@@ -20,8 +20,6 @@ public class Principal extends ActionBarActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        ClienteController.init();
-
         btNovoCliente = (Button) findViewById(R.id.btNovoCliente);
         btNovoComputador = (Button) findViewById(R.id.btNovoComputador);
         btNovaEntrada = (Button) findViewById(R.id.btNovaEntrada);

@@ -23,7 +23,7 @@
             android:textSize="30sp"
             android:textColor="@color/custom_color"
             android:text="Novo Serviço"
-            />
+        />
 
         <TextView
             android:layout_width="match_parent"
@@ -32,11 +32,13 @@
             android:textSize="22sp"
             android:paddingTop="10sp"
             android:paddingBottom="10sp"
-            />
+        />
 
-        <EditText android:id="@+id/txtCliente"
+        <Spinner android:id="@+id/cbCliente"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+
+        </Spinner>
 
         <TextView
             android:layout_width="match_parent"
@@ -47,10 +49,11 @@
             android:paddingBottom="10sp"
         />
 
-        <EditText android:id="@+id/txtEquipamento"
+        <Spinner android:id="@+id/cbComputador"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-        />
+            android:layout_height="wrap_content">
+
+        </Spinner>
 
         <TextView
             android:layout_width="match_parent"

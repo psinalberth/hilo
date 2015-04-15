@@ -1,5 +1,6 @@
 package ps.pdm.hilo.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ps.pdm.hilo.interfaces.DataAccessObject;
@@ -8,42 +9,43 @@ import ps.pdm.hilo.model.Entrada;
 /**
  * Created by inalberth on 14/04/15.
  */
-public class EntradaController implements DataAccessObject<Entrada> {
+public class EntradaController {
 
-    private List<Entrada> entradas;
+    private static List<Entrada> entradas = new ArrayList<Entrada>();
+    private static ClienteController cliente;
+    private static ComputadorController computador;
 
-    public EntradaController() {
-        init();
+    public static void init() {
+
+        final Entrada initEntradas[] = {
+
+            new Entrada(1, cliente.obter(2), computador.obter(3), "Beeps consecutivos ao ligar", true, false, true)
+        };
+
+        for (Entrada e : initEntradas) {
+            entradas.add(e);
+        }
+
     }
 
-    private void init() {
-
-
-    }
-
-    @Override
     public void adicionar(Entrada modelo) {
 
         entradas.add(modelo);
     }
 
-    @Override
     public Entrada obter() {
         return null;
     }
 
-    @Override
     public void alterar(Entrada modelo) {
 
     }
 
-    @Override
     public void remover(Entrada modelo) {
 
     }
 
-    @Override
-    public List<Entrada> obterTodos() {
-        return null;
+    public static List<Entrada> obterTodos() {
+        return entradas;
     }
 }
