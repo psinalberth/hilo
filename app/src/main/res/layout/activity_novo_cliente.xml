@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_vertical_margin"
+    tools:context="ps.pdm.hilo.activity.NovoCliente"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_weight="0.2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Novo Cliente"
+        android:textColor="@color/custom_color"
+    />
+
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:weightSum="0.6">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome:"
+            android:textSize="22sp"
+            android:paddingTop="10sp"
+            android:paddingBottom="10sp"
+        />
+
+        <EditText android:id="@+id/txtNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+        />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Endereço:"
+            android:textSize="22sp"
+            android:paddingTop="10sp"
+            android:paddingBottom="10sp"
+        />
+
+        <EditText android:id="@+id/txtEndereco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+        />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bairro:"
+            android:textSize="22sp"
+            android:paddingTop="10sp"
+            android:paddingBottom="10sp"
+        />
+
+        <EditText android:id="@+id/txtBairro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+        />
+
+        <LinearLayout
+            android:paddingTop="20sp"
+            android:layout_weight="0.2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <Button android:id="@+id/btIncluir"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:text="Incluir"
+            />
+
+            <Button android:id="@+id/btLimpar"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:text="Limpar"
+            />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

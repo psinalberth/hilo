@@ -1,0 +1,13 @@
+<resources>
+
+    <color name="white_opaque">#FFFFFFFF</color>
+    <color name="pitch_black">#FF000000</color>
+    <color name="custom_color">#ff0cdab3</color>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <!-- Customize your theme here. -->
+    </style>
+
+</resources>

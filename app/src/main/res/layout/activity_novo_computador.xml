@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_vertical_margin"
+    tools:context="ps.pdm.hilo.activity.NovoComputador"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_weight="0.2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Novo Equipamento"
+        />
+
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:weightSum="0.6">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descrição:"
+            android:textSize="22sp"
+            android:paddingTop="10sp"
+            android:paddingBottom="10sp"
+            />
+
+        <EditText android:id="@+id/txtDescricao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Marca:"
+            android:textSize="22sp"
+            android:paddingTop="10sp"
+            android:paddingBottom="10sp"
+            />
+
+        <Spinner android:id="@+id/cbMarca"
+            android:layout_width="match_parent"
+            android:layout_height="22sp"
+            android:textSize="22sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estado do Equipamento: "
+            android:textSize="22sp"
+            android:paddingTop="10sp"
+            android:paddingBottom="10sp"
+            />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton android:id="@+id/rbNovo"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:text="Novo"/>
+
+                <RadioButton android:id="@+id/rbUsado"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:text="Usado"/>
+
+            </LinearLayout>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:paddingTop="20sp"
+            android:layout_weight="0.2"
+            android:layout_width="fill_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <Button android:id="@+id/btIncluir"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:background="@drawable/custom_button"
+                android:text="Incluir"/>
+
+            <Button android:id="@+id/btLimpar"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:background="@drawable/custom_button"
+                android:text="Limpar"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

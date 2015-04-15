@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ps.pdm.hilo" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/CustomActionBarTheme" >
+        <activity
+            android:name=".activity.Principal"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.NovoCliente"
+            android:label="@string/title_activity_novo_cliente" >
+        </activity>
+        <activity
+            android:name=".activity.NovoComputador"
+            android:label="@string/title_activity_novo_computador" >
+        </activity>
+        <activity
+            android:name=".activity.NovaEntrada"
+            android:label="@string/title_activity_nova_entrada" >
+        </activity>
+        <activity
+            android:name=".activity.ListarEntradas"
+            android:label="@string/title_activity_listar_entradas" >
+        </activity>
+        <activity
+            android:name=".activity.ListarTudo"
+            android:label="@string/title_activity_listar_tudo" >
+        </activity>
+    </application>
+
+</manifest>
