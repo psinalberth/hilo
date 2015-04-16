@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:layout_weight="0.70">
+        android:layout_weight="0.60">
 
     </LinearLayout>
 
@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:layout_weight="0.30">
+        android:layout_weight="0.40">
 
         <Button android:id="@+id/btNovoCliente"
             style="@style/HiloButton"
@@ -45,12 +45,6 @@
             style="@style/HiloButton"
             android:background="@drawable/custom_button"
             android:text="Listar Entradas"
-        />
-
-        <Button android:id="@+id/btSair"
-            style="@style/HiloButton"
-            android:background="@drawable/custom_button"
-            android:text="Sair"
         />
 
     </LinearLayout>

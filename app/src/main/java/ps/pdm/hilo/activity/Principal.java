@@ -14,7 +14,7 @@ import ps.pdm.hilo.controller.ClienteController;
 
 public class Principal extends ActionBarActivity implements View.OnClickListener {
 
-    private Button btNovoCliente, btNovoComputador, btNovaEntrada, btListarEntradas, btSair;
+    private Button btNovoCliente, btNovoComputador, btNovaEntrada, btListarEntradas;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,13 +24,11 @@ public class Principal extends ActionBarActivity implements View.OnClickListener
         btNovoComputador = (Button) findViewById(R.id.btNovoComputador);
         btNovaEntrada = (Button) findViewById(R.id.btNovaEntrada);
         btListarEntradas = (Button) findViewById(R.id.btListarEntradas);
-        btSair = (Button) findViewById(R.id.btSair);
 
         btNovoCliente.setOnClickListener(this);
         btNovoComputador.setOnClickListener(this);
         btNovaEntrada.setOnClickListener(this);
         btListarEntradas.setOnClickListener(this);
-        btSair.setOnClickListener(this);
     }
 
     @Override
@@ -76,9 +74,6 @@ public class Principal extends ActionBarActivity implements View.OnClickListener
 
             case R.id.btListarEntradas:
                 intent = new Intent(this, ListarEntradas.class);
-                break;
-
-            case R.id.btSair: finish();
                 break;
         }
 
