@@ -1,34 +1,38 @@
 package ps.pdm.hilo.activity;
 
-import android.app.ListActivity;
+
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ListView;
 
 import ps.pdm.hilo.R;
 import ps.pdm.hilo.adapter.EntradaAdapter;
 import ps.pdm.hilo.controller.EntradaController;
 
-public class ListarEntradas extends ListActivity {
+public class ListarEntradas extends ActionBarActivity {
 
+    private ListView listView;
     private EntradaAdapter entradaAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_entradas);
 
+        listView = (ListView) findViewById(android.R.id.list);
+
         entradaAdapter = new EntradaAdapter(this, R.layout.entrada_list_item, EntradaController.obterTodos());
-        setListAdapter(entradaAdapter);
+        listView.setAdapter(entradaAdapter);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_listar_entradas, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -44,14 +48,5 @@ public class ListarEntradas extends ListActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        super.onListItemClick(l, v, position, id);
-
-        int itemPosition = position;
-
-        String item = (String) l.getItemAtPosition(position);
     }
 }

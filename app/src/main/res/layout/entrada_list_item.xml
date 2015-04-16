@@ -5,37 +5,37 @@
     android:layout_height="match_parent">
 
     <TextView android:id="@+id/lbCliente"
-        style="@style/HiloTextViewLabel"/>
+        style="@style/HiloFormTextView"/>
 
     <TextView android:id="@+id/txtListCliente"
         style="@style/HiloTextViewField"/>
 
     <TextView android:id="@+id/lbComputador"
-        style="@style/HiloTextViewLabel"/>
+        style="@style/HiloFormTextView"/>
 
     <TextView android:id="@+id/txtListComputador"
         style="@style/HiloTextViewField"/>
 
     <TextView android:id="@+id/lbDescricaoProblema"
-        style="@style/HiloTextViewLabel"/>
+        style="@style/HiloFormTextView"/>
 
     <TextView android:id="@+id/txtListDescricaoProblema"
         style="@style/HiloTextViewField"/>
 
     <TextView android:id="@+id/lbLimparComputador"
-        style="@style/HiloTextViewLabel"/>
+        style="@style/HiloFormTextView"/>
 
     <TextView android:id="@+id/txtLimparComputador"
         style="@style/HiloTextViewField"/>
 
     <TextView android:id="@+id/lbEntregaDomicilio"
-        style="@style/HiloTextViewLabel"/>
+        style="@style/HiloFormTextView"/>
 
     <TextView android:id="@+id/txtEntregaDomicilio"
         style="@style/HiloTextViewField"/>
 
     <TextView android:id="@+id/lbEmbalarEntrega"
-        style="@style/HiloTextViewLabel"/>
+        style="@style/HiloFormTextView"/>
 
     <TextView android:id="@+id/txtEmbalarEntrega"
         style="@style/HiloTextViewField"/>

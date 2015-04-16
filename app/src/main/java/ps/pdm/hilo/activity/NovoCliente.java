@@ -65,7 +65,6 @@ public class NovoCliente extends ActionBarActivity implements View.OnClickListen
         String bairro = txtBairro.getText().toString();
 
         Cliente cliente = new Cliente(ClienteController.getQuantidade()+1, nome, endereco, bairro);
-
         ClienteController.adicionar(cliente);
 
         finish();

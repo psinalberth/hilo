@@ -15,10 +15,6 @@ public class Entrada {
     private boolean entregaDomicilio;
     private boolean embalarComputador;
 
-    public Entrada() {
-
-    }
-
     public Entrada(int id, Cliente cliente, Computador computador, String descricaoProblema,
                    boolean limparComputador, boolean entregaDomicilio,
                    boolean embalarComputador) {

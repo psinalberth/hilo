@@ -4,14 +4,17 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 
 import ps.pdm.hilo.R;
+import ps.pdm.hilo.controller.ComputadorController;
+import ps.pdm.hilo.model.Computador;
 
-public class NovoComputador extends ActionBarActivity {
+public class NovoComputador extends ActionBarActivity implements View.OnClickListener {
 
     private EditText txtDescricao;
     private Spinner cbMarca;
@@ -32,6 +35,9 @@ public class NovoComputador extends ActionBarActivity {
 
         btIncluir = (Button) findViewById(R.id.btIncluir);
         btLimpar = (Button) findViewById(R.id.btLimpar);
+
+        btIncluir.setOnClickListener(this);
+        btLimpar.setOnClickListener(this);
     }
 
 
@@ -55,5 +61,35 @@ public class NovoComputador extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void novoComputador() {
+
+        String descricao = txtDescricao.getText().toString();
+        String marca = cbMarca.getSelectedItem().toString();
+        String estado = null;
+
+        if (rbNovo.isChecked()) {
+            estado = rbNovo.getText().toString();
+        } else {
+            estado = rbUsado.getText().toString();
+        }
+
+        Computador computador = new Computador(ComputadorController.getQuantidade()+1, descricao, marca, estado);
+        ComputadorController.adicionar(computador);
+
+        finish();
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+
+            case R.id.btIncluir: novoComputador();
+                break;
+            case R.id.btLimpar:
+                break;
+        }
     }
 }

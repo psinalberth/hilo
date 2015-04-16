@@ -17,7 +17,10 @@ import java.util.ArrayList;
 import ps.pdm.hilo.R;
 import ps.pdm.hilo.controller.ClienteController;
 import ps.pdm.hilo.controller.ComputadorController;
+import ps.pdm.hilo.controller.EntradaController;
 import ps.pdm.hilo.model.Cliente;
+import ps.pdm.hilo.model.Computador;
+import ps.pdm.hilo.model.Entrada;
 
 public class NovaEntrada extends ActionBarActivity implements View.OnClickListener {
 
@@ -77,10 +80,19 @@ public class NovaEntrada extends ActionBarActivity implements View.OnClickListen
         return super.onOptionsItemSelected(item);
     }
 
-    private void teste() {
+    private void novaEntrada() {
 
-        if (checkEntrega.isChecked())
-            Toast.makeText(this, checkEntrega.getText().toString(), Toast.LENGTH_SHORT).show();
+        Cliente cliente = (Cliente) cbCliente.getSelectedItem();
+        Computador computador = (Computador) cbComputador.getSelectedItem();
+        String descricaoProblema = txtProblema.getText().toString();
+        boolean limparComputador = checkLimpeza.isChecked();
+        boolean entregaDomicilio = checkEntrega.isChecked();
+        boolean embalarEntrega = checkEntrega.isChecked();
+
+        Entrada entrada = new Entrada(EntradaController.getQuantidade()+1, cliente, computador, descricaoProblema, limparComputador, entregaDomicilio, embalarEntrega);
+        EntradaController.adicionar(entrada);
+
+        finish();
     }
 
     @Override
@@ -88,8 +100,7 @@ public class NovaEntrada extends ActionBarActivity implements View.OnClickListen
 
         switch (v.getId()) {
 
-            case R.id.btIncluir:
-                teste();
+            case R.id.btIncluir: novaEntrada();
                 break;
 
             case R.id.btLimpar:
