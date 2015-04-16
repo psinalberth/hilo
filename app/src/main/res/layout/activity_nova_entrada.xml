@@ -48,7 +48,6 @@
         <Spinner android:id="@+id/cbComputador"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
         </Spinner>
 
         <TextView
@@ -58,48 +57,16 @@
             android:textSize="22sp"
             android:paddingTop="10sp"
             android:paddingBottom="10sp"
-            />
+        />
 
         <EditText android:id="@+id/txtProblema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
-            android:minLines="5"
+            android:minLines="3"
             android:maxLines="7"
             android:textSize="22sp"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Data de Entrada:"
-            android:textSize="22sp"
-            android:paddingTop="10sp"
-            android:paddingBottom="10sp"
-            />
-
-        <EditText android:id="@+id/txtDataEntrada"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="date"
-            android:textSize="22sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Data de Saída:"
-            android:textSize="22sp"
-            android:paddingTop="10sp"
-            android:paddingBottom="10sp"
-            />
-
-        <EditText android:id="@+id/txtDataSaida"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="date"
-            android:textSize="22sp"
-            />
-
+        />
 
         <TextView
             android:layout_width="match_parent"
@@ -108,26 +75,28 @@
             android:textSize="22sp"
             android:paddingTop="10sp"
             android:paddingBottom="10sp"
-            />
-
+        />
 
         <CheckBox android:id="@+id/checkEntrega"
             android:layout_width="match_parent"
             android:text="Entrega em Domicílio"
             android:textSize="22sp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+        />
 
         <CheckBox android:id="@+id/checkLimpeza"
             android:layout_width="match_parent"
             android:text="Limpeza antes da entrega"
             android:textSize="22sp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+        />
 
         <CheckBox android:id="@+id/checkEmbalagem"
             android:layout_width="match_parent"
             android:text="Embalar equipamento"
             android:textSize="22sp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+        />
 
         <LinearLayout
             android:paddingTop="20sp"
@@ -140,14 +109,16 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:textSize="22sp"
-                android:text="Incluir"/>
+                android:text="Incluir"
+            />
 
             <Button android:id="@+id/btLimpar"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:textSize="22sp"
-                android:text="Limpar"/>
+                android:text="Limpar"
+            />
 
         </LinearLayout>
 

@@ -12,7 +12,7 @@
 
     <TextView
         style="@style/HiloSectionHeader"
-        android:text="Novo Equipamento"
+        android:text="Novo Computador"
         />
 
     <LinearLayout android:orientation="vertical"
@@ -21,45 +21,29 @@
         android:weightSum="0.6">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/HiloFormTextView"
             android:text="Descrição:"
-            android:textSize="22sp"
-            android:paddingTop="10sp"
-            android:paddingBottom="10sp"
-            />
+        />
 
         <EditText android:id="@+id/txtDescricao"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="22sp"
-            />
+            style="@style/HiloFormEditText"
+        />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/HiloFormTextView"
             android:text="Marca:"
-            android:textSize="22sp"
-            android:paddingTop="10sp"
-            android:paddingBottom="10sp"
-            />
+        />
 
         <Spinner android:id="@+id/cbMarca"
-            android:layout_width="match_parent"
-            android:layout_height="22sp"
+            style="@style/HiloFormEditText"
             android:entries="@array/marcas"
             android:prompt="@string/prompt_marcas"
-            android:textSize="22sp"
-            />
+        />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/HiloFormTextView"
             android:text="Estado do Equipamento: "
-            android:textSize="22sp"
-            android:paddingTop="10sp"
-            android:paddingBottom="10sp"
-            />
+        />
 
         <RadioGroup android:id="@+id/rgEstadoComputador"
             android:layout_width="match_parent"
@@ -73,7 +57,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:checked="true"
                     android:text="Novo"/>
 
@@ -81,33 +65,26 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:text="Usado"/>
 
             </LinearLayout>
 
         </RadioGroup>
 
-        <LinearLayout
-            android:paddingTop="20sp"
-            android:layout_weight="0.2"
-            android:layout_width="fill_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="0.5"
+            android:gravity="center|bottom">
 
             <Button android:id="@+id/btIncluir"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"
+                style="@style/HiloButton"
                 android:background="@drawable/custom_button"
                 android:text="Incluir"/>
 
             <Button android:id="@+id/btLimpar"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"
+                style="@style/HiloButton"
                 android:background="@drawable/custom_button"
                 android:text="Limpar"/>
 

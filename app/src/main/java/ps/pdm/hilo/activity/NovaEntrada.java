@@ -36,8 +36,6 @@ public class NovaEntrada extends ActionBarActivity implements View.OnClickListen
         cbComputador = (Spinner) findViewById(R.id.cbComputador);
 
         txtProblema = (EditText) findViewById(R.id.txtProblema);
-        txtDataEntrada = (EditText) findViewById(R.id.txtDataEntrada);
-        txtDataSaida = (EditText) findViewById(R.id.txtDataSaida);
 
         checkEntrega = (CheckBox) findViewById(R.id.checkEntrega);
         checkLimpeza = (CheckBox) findViewById(R.id.checkLimpeza);
@@ -60,7 +58,7 @@ public class NovaEntrada extends ActionBarActivity implements View.OnClickListen
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_principal, menu);
+        getMenuInflater().inflate(R.menu.menu_nova_entrada, menu);
         return true;
     }
 

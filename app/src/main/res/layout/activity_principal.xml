@@ -1,6 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context="ps.pdm.hilo.activity.Principal"
@@ -23,53 +24,33 @@
         android:layout_weight="0.30">
 
         <Button android:id="@+id/btNovoCliente"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Novo Cliente"
-            android:textSize="28sp"
-            android:textColor="#FFF"
+            style="@style/HiloButton"
             android:background="@drawable/custom_button"
-            android:layout_marginTop="10sp"
+            android:text="Novo Cliente"
         />
 
         <Button android:id="@+id/btNovoComputador"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Novo Equipamento"
-            android:textSize="28sp"
-            android:textColor="#FFF"
+            style="@style/HiloButton"
             android:background="@drawable/custom_button"
-            android:layout_marginTop="10sp"
+            android:text="Novo Equipamento"
         />
 
         <Button android:id="@+id/btNovaEntrada"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nova Entrada"
-            android:textSize="28sp"
-            android:textColor="#FFF"
+            style="@style/HiloButton"
             android:background="@drawable/custom_button"
-            android:layout_marginTop="10sp"
+            android:text="Nova Entrada"
         />
 
         <Button android:id="@+id/btListarEntradas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Listar Entradas"
-            android:textSize="28sp"
-            android:textColor="#FFF"
+            style="@style/HiloButton"
             android:background="@drawable/custom_button"
-            android:layout_marginTop="10sp"
+            android:text="Listar Entradas"
         />
 
         <Button android:id="@+id/btSair"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sair"
-            android:textSize="28sp"
-            android:textColor="#FFF"
+            style="@style/HiloButton"
             android:background="@drawable/custom_button"
-            android:layout_marginTop="10sp"
+            android:text="Sair"
         />
 
     </LinearLayout>

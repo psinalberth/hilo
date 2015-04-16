@@ -21,69 +21,47 @@
         android:weightSum="0.6">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/HiloFormTextView"
             android:text="Nome:"
-            android:textSize="22sp"
-            android:paddingTop="10sp"
-            android:paddingBottom="10sp"
         />
 
         <EditText android:id="@+id/txtNome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="22sp"
+            style="@style/HiloFormEditText"
         />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/HiloFormTextView"
             android:text="Endereço:"
-            android:textSize="22sp"
-            android:paddingTop="10sp"
-            android:paddingBottom="10sp"
         />
 
         <EditText android:id="@+id/txtEndereco"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="22sp"
+            style="@style/HiloFormEditText"
         />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/HiloFormTextView"
             android:text="Bairro:"
-            android:textSize="22sp"
-            android:paddingTop="10sp"
-            android:paddingBottom="10sp"
         />
 
         <EditText android:id="@+id/txtBairro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="22sp"
+            style="@style/HiloFormEditText"
         />
-
-        <LinearLayout
-            android:paddingTop="20sp"
-            android:layout_weight="0.2"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+        
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="0.5"
+            android:gravity="center|bottom">
 
             <Button android:id="@+id/btIncluir"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"
+                style="@style/HiloButton"
+                android:background="@drawable/custom_button"
                 android:text="Incluir"
             />
 
             <Button android:id="@+id/btLimpar"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"
+                style="@style/HiloButton"
+                android:background="@drawable/custom_button"
                 android:text="Limpar"
             />
 
