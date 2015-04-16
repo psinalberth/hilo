@@ -4,51 +4,40 @@
     android:layout_height="match_parent">
 
     <TextView android:id="@+id/lbCliente"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewLabel"
+    />
 
     <TextView android:id="@+id/txtListCliente"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewField"/>
 
     <TextView android:id="@+id/lbComputador"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewLabel"/>
 
     <TextView android:id="@+id/txtListComputador"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewField"/>
 
     <TextView android:id="@+id/lbDescricaoProblema"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewLabel"/>
 
     <TextView android:id="@+id/txtListDescricaoProblema"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewField"/>
 
     <TextView android:id="@+id/lbLimparComputador"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewLabel"/>
 
     <TextView android:id="@+id/txtLimparComputador"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewField"/>
 
     <TextView android:id="@+id/lbEntregaDomicilio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewLabel"/>
 
     <TextView android:id="@+id/txtEntregaDomicilio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewField"/>
 
     <TextView android:id="@+id/lbEmbalarEntrega"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewLabel"/>
 
     <TextView android:id="@+id/txtEmbalarEntrega"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewField"/>
 
 </LinearLayout>

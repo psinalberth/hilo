@@ -1,5 +1,6 @@
 package ps.pdm.hilo.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
@@ -13,7 +14,7 @@ import ps.pdm.hilo.controller.ComputadorController;
 import ps.pdm.hilo.controller.EntradaController;
 import ps.pdm.hilo.model.Computador;
 
-public class SplashScreen extends ActionBarActivity {
+public class SplashScreen extends Activity {
 
     private static int TIME_DELAY = 3000;
 

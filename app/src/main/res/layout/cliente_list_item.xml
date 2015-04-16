@@ -4,27 +4,21 @@
     android:layout_height="match_parent">
 
     <TextView android:id="@+id/lbNome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewLabel"/>
 
     <TextView android:id="@+id/txtListNome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewField"/>
 
     <TextView android:id="@+id/lbEndereco"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewLabel"/>
 
     <TextView android:id="@+id/txtListEndereco"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewField"/>
 
     <TextView android:id="@+id/lbBairro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewLabel"/>
 
     <TextView android:id="@+id/txtBairro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        style="@style/HiloTextViewField"/>
 
 </LinearLayout>

@@ -1,24 +1,18 @@
 package ps.pdm.hilo.activity;
 
 import android.app.ListActivity;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import ps.pdm.hilo.R;
-import ps.pdm.hilo.adapter.ClienteAdapter;
 import ps.pdm.hilo.adapter.EntradaAdapter;
-import ps.pdm.hilo.controller.ClienteController;
 import ps.pdm.hilo.controller.EntradaController;
-import ps.pdm.hilo.model.Cliente;
 
 public class ListarEntradas extends ListActivity {
 
-    private ClienteAdapter adapter;
     private EntradaAdapter entradaAdapter;
 
     @Override
@@ -26,8 +20,6 @@ public class ListarEntradas extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_entradas);
 
-//        adapter = new ClienteAdapter(this, R.layout.cliente_list_item, ClienteController.obterTodos());
-//        setListAdapter(adapter);
         entradaAdapter = new EntradaAdapter(this, R.layout.entrada_list_item, EntradaController.obterTodos());
         setListAdapter(entradaAdapter);
     }
