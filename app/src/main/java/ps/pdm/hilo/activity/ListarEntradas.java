@@ -26,8 +26,8 @@ public class ListarEntradas extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_entradas);
 
-        //adapter = new ClienteAdapter(this, R.layout.cliente_list_item, ClienteController.obterTodos());
-        //setListAdapter(adapter);
+//        adapter = new ClienteAdapter(this, R.layout.cliente_list_item, ClienteController.obterTodos());
+//        setListAdapter(adapter);
         entradaAdapter = new EntradaAdapter(this, R.layout.entrada_list_item, EntradaController.obterTodos());
         setListAdapter(entradaAdapter);
     }

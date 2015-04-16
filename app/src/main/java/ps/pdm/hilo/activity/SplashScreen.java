@@ -22,13 +22,13 @@ public class SplashScreen extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        ClienteController.init();
+        ComputadorController.init();
+        EntradaController.init();
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
-                ClienteController.init();
-                ComputadorController.init();
-                EntradaController.init();
 
                 Intent intent = new Intent(SplashScreen.this, Principal.class);
                 startActivity(intent);

@@ -34,7 +34,7 @@ public class EntradaAdapter extends ArrayAdapter<Entrada> {
         if (view == null) {
 
             LayoutInflater layoutInflater = LayoutInflater.from(getContext());
-            view = layoutInflater.inflate(R.layout.cliente_list_item, null);
+            view = layoutInflater.inflate(R.layout.entrada_list_item, null);
         }
 
         Entrada entrada = entradas.get(position);
@@ -58,7 +58,7 @@ public class EntradaAdapter extends ArrayAdapter<Entrada> {
                 lbCliente.setText("Cliente: ");
 
             if (txtListCliente != null)
-                txtListCliente.setText(entrada.getCliente().getNome());
+                txtListCliente.setText(entrada.getCliente().toString());
 
             if (lbComputador != null)
                 lbComputador.setText("Computador: ");
@@ -77,10 +77,11 @@ public class EntradaAdapter extends ArrayAdapter<Entrada> {
 
             if (txtLimparComputador != null) {
 
-                if (entrada.isLimparComputador())
+                if (entrada.isLimparComputador()) {
                     txtLimparComputador.setText("Sim");
-                else
+                } else {
                     txtLimparComputador.setText("Não");
+                }
             }
 
             if (lbEntregaDomicilio != null)
@@ -88,10 +89,11 @@ public class EntradaAdapter extends ArrayAdapter<Entrada> {
 
             if (txtEntregaDomicilio != null) {
 
-                if (entrada.isEntregaDomicilio())
+                if (entrada.isEntregaDomicilio()) {
                     txtEntregaDomicilio.setText("Sim");
-                else
+                } else {
                     txtEntregaDomicilio.setText("Não");
+                }
             }
 
             if (lbEmbalarEntrega != null)
@@ -99,10 +101,11 @@ public class EntradaAdapter extends ArrayAdapter<Entrada> {
 
             if (txtEmbalarEntrega != null) {
 
-                if (entrada.isEmbalarComputador())
+                if (entrada.isEmbalarComputador()) {
                     txtEmbalarEntrega.setText("Sim");
-                else
+                } else {
                     txtEmbalarEntrega.setText("Não");
+                }
             }
         }
 

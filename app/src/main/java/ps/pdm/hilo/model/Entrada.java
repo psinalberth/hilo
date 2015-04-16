@@ -23,6 +23,14 @@ public class Entrada {
                    boolean limparComputador, boolean entregaDomicilio,
                    boolean embalarComputador) {
 
+        this.id = id;
+        this.cliente = cliente;
+        this.computador = computador;
+        this.descricaoProblema = descricaoProblema;
+        this.limparComputador = limparComputador;
+        this.entregaDomicilio = entregaDomicilio;
+        this.embalarComputador = embalarComputador;
+
     }
 
     public void setId(int id) {
