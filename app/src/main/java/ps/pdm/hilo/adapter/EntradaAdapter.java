@@ -45,6 +45,8 @@ public class EntradaAdapter extends ArrayAdapter<Entrada> {
             TextView txtListCliente = (TextView) view.findViewById(R.id.txtListCliente);
             TextView lbComputador = (TextView) view.findViewById(R.id.lbComputador);
             TextView txtListComputador = (TextView) view.findViewById(R.id.txtListComputador);
+            TextView lbEstadoComputador = (TextView) view.findViewById(R.id.lbEstadoComputador);
+            TextView txtListEstadoComputador = (TextView) view.findViewById(R.id.txtListEstadoComputador);
             TextView lbDescricaoProblema = (TextView) view.findViewById(R.id.lbDescricaoProblema);
             TextView txtListDescricaoProblema = (TextView) view.findViewById(R.id.txtListDescricaoProblema);
             TextView lbLimparComputador = (TextView) view.findViewById(R.id.lbLimparComputador);
@@ -65,6 +67,12 @@ public class EntradaAdapter extends ArrayAdapter<Entrada> {
 
             if (txtListComputador != null)
                 txtListComputador.setText(entrada.getComputador().toString());
+
+            if (lbEstadoComputador != null)
+                lbEstadoComputador.setText("Estado do Equipamento:");
+
+            if (txtListEstadoComputador != null)
+                txtListEstadoComputador.setText(entrada.getComputador().getEstado());
 
             if (lbDescricaoProblema != null)
                 lbDescricaoProblema.setText("Problema: ");

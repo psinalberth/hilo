@@ -7,17 +7,22 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import ps.pdm.hilo.R;
 import ps.pdm.hilo.controller.ClienteController;
 import ps.pdm.hilo.model.Cliente;
+import ps.pdm.hilo.util.HiloUtils;
 
 public class NovoCliente extends ActionBarActivity implements View.OnClickListener {
 
     private EditText txtNome, txtEndereco, txtBairro;
     private Button btIncluir, btLimpar;
+
+    private ViewGroup viewGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,8 @@ public class NovoCliente extends ActionBarActivity implements View.OnClickListen
 
         btIncluir = (Button) findViewById(R.id.btIncluir);
         btLimpar = (Button) findViewById(R.id.btLimpar);
+
+        viewGroup = (ViewGroup) findViewById(R.id.layoutNovoCliente);
 
         btIncluir.setOnClickListener(this);
         btLimpar.setOnClickListener(this);
@@ -64,10 +71,17 @@ public class NovoCliente extends ActionBarActivity implements View.OnClickListen
         String endereco = txtEndereco.getText().toString();
         String bairro = txtBairro.getText().toString();
 
-        Cliente cliente = new Cliente(ClienteController.getQuantidade()+1, nome, endereco, bairro);
-        ClienteController.adicionar(cliente);
+        if (HiloUtils.validarCampos(viewGroup)) {
 
-        finish();
+            Cliente cliente = new Cliente(ClienteController.getQuantidade() + 1, nome, endereco, bairro);
+            ClienteController.adicionar(cliente);
+
+            finish();
+
+        } else {
+
+            Toast.makeText(this, "Existem campos em branco. Por favor, tente novamente", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -77,7 +91,7 @@ public class NovoCliente extends ActionBarActivity implements View.OnClickListen
 
             case R.id.btIncluir: novoCliente();
                 break;
-            case R.id.btLimpar:
+            case R.id.btLimpar: HiloUtils.limparCampos(viewGroup);
                 break;
         }
     }

@@ -10,7 +10,8 @@
     tools:context="ps.pdm.hilo.activity.NovaEntrada"
     android:weightSum="1">
 
-    <LinearLayout android:orientation="vertical"
+    <LinearLayout android:id="@+id/layoutNovaEntrada"
+        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:weightSum="0.6">

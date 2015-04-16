@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -21,6 +22,7 @@ import ps.pdm.hilo.controller.EntradaController;
 import ps.pdm.hilo.model.Cliente;
 import ps.pdm.hilo.model.Computador;
 import ps.pdm.hilo.model.Entrada;
+import ps.pdm.hilo.util.HiloUtils;
 
 public class NovaEntrada extends ActionBarActivity implements View.OnClickListener {
 
@@ -28,6 +30,8 @@ public class NovaEntrada extends ActionBarActivity implements View.OnClickListen
     private Spinner cbCliente, cbComputador;
     private CheckBox checkEntrega, checkLimpeza, checkEmbalagem;
     private Button btIncluir, btLimpar;
+
+    private ViewGroup viewGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,8 @@ public class NovaEntrada extends ActionBarActivity implements View.OnClickListen
 
         btIncluir = (Button) findViewById(R.id.btIncluir);
         btLimpar = (Button) findViewById(R.id.btLimpar);
+
+        viewGroup = (ViewGroup) findViewById(R.id.layoutNovaEntrada);
 
         btIncluir.setOnClickListener(this);
         btLimpar.setOnClickListener(this);
@@ -89,10 +95,17 @@ public class NovaEntrada extends ActionBarActivity implements View.OnClickListen
         boolean entregaDomicilio = checkEntrega.isChecked();
         boolean embalarEntrega = checkEntrega.isChecked();
 
-        Entrada entrada = new Entrada(EntradaController.getQuantidade()+1, cliente, computador, descricaoProblema, limparComputador, entregaDomicilio, embalarEntrega);
-        EntradaController.adicionar(entrada);
+        if (HiloUtils.validarCampos(viewGroup)) {
 
-        finish();
+            Entrada entrada = new Entrada(EntradaController.getQuantidade() + 1, cliente, computador, descricaoProblema, limparComputador, entregaDomicilio, embalarEntrega);
+            EntradaController.adicionar(entrada);
+
+            finish();
+
+        } else {
+
+            Toast.makeText(this, "Existem campos em branco. Por favor, tente novamente", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -103,7 +116,7 @@ public class NovaEntrada extends ActionBarActivity implements View.OnClickListen
             case R.id.btIncluir: novaEntrada();
                 break;
 
-            case R.id.btLimpar:
+            case R.id.btLimpar: HiloUtils.limparCampos(viewGroup);
                 break;
         }
     }

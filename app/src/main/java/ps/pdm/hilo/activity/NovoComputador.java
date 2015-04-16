@@ -5,21 +5,28 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import ps.pdm.hilo.R;
 import ps.pdm.hilo.controller.ComputadorController;
 import ps.pdm.hilo.model.Computador;
+import ps.pdm.hilo.util.HiloUtils;
 
 public class NovoComputador extends ActionBarActivity implements View.OnClickListener {
 
     private EditText txtDescricao;
     private Spinner cbMarca;
     private Button btIncluir, btLimpar;
-    private RadioButton rbNovo, rbUsado;
+    private RadioGroup rgEstadoComputador;
+    private RadioButton rbEstado;
+
+    private ViewGroup viewGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +37,12 @@ public class NovoComputador extends ActionBarActivity implements View.OnClickLis
 
         cbMarca = (Spinner) findViewById(R.id.cbMarca);
 
-        rbNovo = (RadioButton) findViewById(R.id.rbNovo);
-        rbUsado = (RadioButton) findViewById(R.id.rbUsado);
+        rgEstadoComputador = (RadioGroup) findViewById(R.id.rgEstadoComputador);
 
         btIncluir = (Button) findViewById(R.id.btIncluir);
         btLimpar = (Button) findViewById(R.id.btLimpar);
+
+        viewGroup = (ViewGroup) findViewById(R.id.layoutNovoComputador);
 
         btIncluir.setOnClickListener(this);
         btLimpar.setOnClickListener(this);
@@ -65,20 +73,25 @@ public class NovoComputador extends ActionBarActivity implements View.OnClickLis
 
     private void novoComputador() {
 
+        int index = rgEstadoComputador.getCheckedRadioButtonId();
+
+        rbEstado = (RadioButton) findViewById(index);
+
         String descricao = txtDescricao.getText().toString();
         String marca = cbMarca.getSelectedItem().toString();
-        String estado = null;
+        String estado = rbEstado.getText().toString();
 
-        if (rbNovo.isChecked()) {
-            estado = rbNovo.getText().toString();
+        if (HiloUtils.validarCampos(viewGroup)) {
+
+            Computador computador = new Computador(ComputadorController.getQuantidade() + 1, descricao, marca, estado);
+            ComputadorController.adicionar(computador);
+
+            finish();
+
         } else {
-            estado = rbUsado.getText().toString();
+
+            Toast.makeText(this, "Existem campos em branco. Por favor, tente novamente", Toast.LENGTH_SHORT).show();
         }
-
-        Computador computador = new Computador(ComputadorController.getQuantidade()+1, descricao, marca, estado);
-        ComputadorController.adicionar(computador);
-
-        finish();
     }
 
     @Override
@@ -88,7 +101,7 @@ public class NovoComputador extends ActionBarActivity implements View.OnClickLis
 
             case R.id.btIncluir: novoComputador();
                 break;
-            case R.id.btLimpar:
+            case R.id.btLimpar: HiloUtils.limparCampos(viewGroup);
                 break;
         }
     }

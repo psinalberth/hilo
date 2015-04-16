@@ -15,7 +15,8 @@
         android:text="Novo Computador"
         />
 
-    <LinearLayout android:orientation="vertical"
+    <LinearLayout android:id="@+id/layoutNovoComputador"
+        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:weightSum="0.6">
@@ -49,26 +50,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
                 <RadioButton android:id="@+id/rbNovo"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:checked="true"
                     android:text="Novo"/>
 
                 <RadioButton android:id="@+id/rbUsado"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:text="Usado"/>
-
-            </LinearLayout>
 
         </RadioGroup>
 

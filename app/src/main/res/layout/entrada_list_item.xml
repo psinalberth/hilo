@@ -16,6 +16,12 @@
     <TextView android:id="@+id/txtListComputador"
         style="@style/HiloTextViewField"/>
 
+    <TextView android:id="@+id/lbEstadoComputador"
+        style="@style/HiloFormTextView"/>
+
+    <TextView android:id="@+id/txtListEstadoComputador"
+        style="@style/HiloTextViewField"/>
+
     <TextView android:id="@+id/lbDescricaoProblema"
         style="@style/HiloFormTextView"/>
 
