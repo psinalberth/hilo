@@ -79,7 +79,6 @@ public class Principal extends ActionBarActivity implements View.OnClickListener
                 break;
 
             case R.id.btSair:
-                intent = new Intent(this, ListarTudo.class);
                 break;
         }
 

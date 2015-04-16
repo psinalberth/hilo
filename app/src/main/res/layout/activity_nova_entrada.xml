@@ -10,7 +10,6 @@
     tools:context="ps.pdm.hilo.activity.NovaEntrada"
     android:weightSum="1">
 
-
     <LinearLayout android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
@@ -22,12 +21,8 @@
         />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/HiloFormTextView"
             android:text="Cliente:"
-            android:textSize="22sp"
-            android:paddingTop="10sp"
-            android:paddingBottom="10sp"
         />
 
         <Spinner android:id="@+id/cbCliente"
@@ -37,12 +32,8 @@
         </Spinner>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Equipamento:"
-            android:textSize="22sp"
-            android:paddingTop="10sp"
-            android:paddingBottom="10sp"
+            style="@style/HiloFormTextView"
+            android:text="Computador:"
         />
 
         <Spinner android:id="@+id/cbComputador"
@@ -51,72 +42,53 @@
         </Spinner>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/HiloFormTextView"
             android:text="Descrição do Problema:"
-            android:textSize="22sp"
-            android:paddingTop="10sp"
-            android:paddingBottom="10sp"
         />
 
         <EditText android:id="@+id/txtProblema"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/HiloFormEditText"
             android:inputType="textMultiLine"
             android:minLines="3"
             android:maxLines="7"
-            android:textSize="22sp"
         />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/HiloFormTextView"
             android:text="Serviços Opcionais:"
-            android:textSize="22sp"
-            android:paddingTop="10sp"
-            android:paddingBottom="10sp"
         />
 
         <CheckBox android:id="@+id/checkEntrega"
-            android:layout_width="match_parent"
+            style="@style/HiloFormCheckBox"
             android:text="Entrega em Domicílio"
-            android:textSize="22sp"
-            android:layout_height="wrap_content"
         />
 
         <CheckBox android:id="@+id/checkLimpeza"
-            android:layout_width="match_parent"
+            style="@style/HiloFormCheckBox"
             android:text="Limpeza antes da entrega"
-            android:textSize="22sp"
-            android:layout_height="wrap_content"
         />
 
         <CheckBox android:id="@+id/checkEmbalagem"
-            android:layout_width="match_parent"
+            style="@style/HiloFormCheckBox"
             android:text="Embalar equipamento"
-            android:textSize="22sp"
-            android:layout_height="wrap_content"
         />
 
-        <LinearLayout
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="0.5"
             android:paddingTop="20sp"
-            android:layout_weight="0.2"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:gravity="center|bottom">
 
             <Button android:id="@+id/btIncluir"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"
+                style="@style/HiloButton"
+                android:background="@drawable/custom_button"
                 android:text="Incluir"
             />
 
             <Button android:id="@+id/btLimpar"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"
+                style="@style/HiloButton"
+                android:background="@drawable/custom_button"
                 android:text="Limpar"
             />
 
